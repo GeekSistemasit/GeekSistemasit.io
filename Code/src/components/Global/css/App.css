@@ -1,0 +1,50 @@
+.Content {
+  font-family: 'Roboto';
+}
+
+.row {
+  display: table;
+  width: 100%;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.row .col {
+    width: 264px;
+    display: inline-block;
+    margin: 0 43px 50px;
+    position: relative;
+}
+
+.row .col .content-box {
+  background-color: #fff;
+}
+
+.Content h3{
+  text-align: center;
+  margin: 30px 0;
+}
+
+.btn-own {
+  color: white;
+  padding: 10px 30px;
+  border-radius: 0px;
+  text-decoration: none;
+  background: #d62f2f;
+}
+.box-btn-home {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.box-btn-next {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
