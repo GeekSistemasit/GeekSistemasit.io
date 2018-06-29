@@ -31,6 +31,11 @@
   border-radius: 0px;
   text-decoration: none;
   background: #d62f2f;
+  opacity: 1;
+  transition: 0.5s;
+}
+.btn-own.disabled {
+  opacity: 0;
 }
 .box-btn-home {
   position: absolute;

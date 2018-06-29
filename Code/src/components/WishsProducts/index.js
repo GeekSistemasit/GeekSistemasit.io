@@ -23,6 +23,23 @@ class Wishes extends Component {
 		this.handleNextStep = this.handleNextStep.bind( this );
 	}
 
+	componentDidMount ( ) {
+		/*fetch( 'https://www.secure-developments.com/commonwealth/ws_onstar/v2/modelo' )
+			.then( results => {
+				results.json()
+			})
+			.then( ( repos ) => {
+				console.log( repos );
+			});*/
+			fetch( 'https://ranking-app-nodejs.herokuapp.com/api/products/' ).
+  				then(
+  					response => response.json()
+				).then((repos) => {
+					console.log(repos);
+					console.log(repos.length);
+				});
+	}
+
 	handleNextStep( e ) {
 		poll.products = this.state.listProducts;
 	}
@@ -44,6 +61,8 @@ class Wishes extends Component {
 			this.setState ({
 				count: this.state.count - 1
 			});
+			
+			document.querySelector( '.box-btn-next a' ).classList.add( 'disabled' );
 
 			this.removeProductToList( idProduct );
 			this.renderElementToHtml( name, idProduct );
@@ -59,6 +78,10 @@ class Wishes extends Component {
 
 				// Ethis.addProductToList( idProduct, this.state.count );
 				this.renderElementToHtml( name, idProduct );
+
+				if ( this.state.count === 5 ) {
+					document.querySelector( '.box-btn-next a' ).classList.remove( 'disabled' );
+				}
 			}
 		
 		}
@@ -147,7 +170,7 @@ class Wishes extends Component {
 					{
 						products && products.map(
 							( item, key ) => 
-								<div data-id={ item.name }  data-name={ item.name } className="box" onClick={ this.handleLikeClick } key={ key }>
+								<div data-id={ item.name }  data-name={ item.name } className="box" key={ key }>
 									<img src={ item.img } alt={ item.name } title={ item.name } onClick={ this.handleLikeClick } />
 									<div className="content-check">
 										<img src="images/done.png" alt="done" />
@@ -163,7 +186,7 @@ class Wishes extends Component {
 					<Link className="btn-own" to="/">Home</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own" to="/ask-one" onClick={ this.handleNextStep } >Next</Link>
+					<Link className="btn-own disabled" to="/ask-one" onClick={ this.handleNextStep } >Next</Link>
 				</div>
 			</div>
 		);
