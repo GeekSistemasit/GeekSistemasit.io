@@ -60,7 +60,7 @@ class AskFour extends Component {
 					</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own" to="/ask-five" >
+					<Link className="btn-own" to="/ask-five" onClick={ this.handleNextStep }>
 						<img src="images/siguiente.png"  alt="boton del siguiente paso" />
 					</Link>
 				</div>

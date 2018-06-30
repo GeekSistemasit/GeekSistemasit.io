@@ -121,3 +121,18 @@
 	margin-left: 362px;
     margin-top: 4px;
 }
+
+
+/* PREGUNTA SEVEN */
+.main-question.ask-seven .content-with-background {
+	padding: 298px 95px 304px 90px;
+}
+.main-question.ask-seven .content-with-background textarea {
+    width: 100%;
+    background: no-repeat;
+    border: 0;
+    font-size: 19px;
+    height: 283px;
+    line-height: 50px;
+    outline: none;
+}

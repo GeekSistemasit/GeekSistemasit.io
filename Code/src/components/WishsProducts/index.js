@@ -42,7 +42,6 @@ class Wishes extends Component {
 
 	handleNextStep( e ) {
 		poll.products = this.state.listProducts;
-		console.log( this.state.arrProducts );
 	}
 
 	handleLikeClick( e ) {
