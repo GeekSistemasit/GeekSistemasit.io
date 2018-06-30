@@ -14,50 +14,33 @@ class AskSeven extends Component {
 		super();
 
 		this.state = {
-			target: ''
+			questionSeven: ''
 		}
 
-		this.handleCheck = this.handleCheck.bind( this );
+		this.handleTypeText = this.handleTypeText.bind( this );
 		this.handleNextStep = this.handleNextStep.bind( this );
 	}
 
 	handleNextStep() {
-		poll.target = this.state.target;
+		poll.questionSeven = this.state.questionSeven;
 
 		console.log( poll );
 	}
 
-	handleCheck ( e ) {
-		var value = e.target.getAttribute( 'value' );
+	handleTypeText ( e ) {
+		var value = e.target.value;
 
 		this.setState({
-			target: value
+			questionSeven: value
 		});
 	}
 
 	render(){
 		return (
 			<div className="main-question ask-seven">
-				<img src="images/pantalla6.jpg" alt="background step two"/>
+				<img src="images/pantalla11.jpg" alt="background step two"/>
 				<div className="content-with-background">
-					<label>
-						<input type="radio" name="targets" value="Papelería" onClick={ this.handleCheck } /> 
-				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
-						<br />
-						<span>Papelería</span>
-					</label>
-					<label>
-						<input type="radio" name="targets" value="Hogar" onClick={ this.handleCheck } /> 
-				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
-						<br />
-						<span>Hogar</span>
-					</label>
-					<label>
-						<input type="radio" name="targets" value="Accesorios" onClick={ this.handleCheck } /> 
-				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
-						<br />
-						<span>Accesorios</span>
-					</label>
+					<textarea onChange={ this.handleTypeText }></textarea>
 				</div>
 
 				<div className="box-btn-home">
@@ -66,7 +49,7 @@ class AskSeven extends Component {
 					</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own" to="/ask-seven" >
+					<Link className="btn-own" to="/ask-seven" onClick={ this.handleNextStep }>
 						<img src="images/siguiente.png"  alt="boton del siguiente paso" />
 					</Link>
 				</div>
