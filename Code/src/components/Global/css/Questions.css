@@ -82,3 +82,42 @@
 	margin-left: 71px;
 	margin-top: -2px;
 }
+
+
+/* PREGUNTA CUATRO */
+.main-question.ask-four .content-with-background {
+	padding-top: 412px;
+}
+.main-question.ask-four .content-with-background label:nth-child(1) {
+	margin-left: 279px;
+}
+.main-question.ask-four .content-with-background label:nth-child(2) {
+	margin-left: 362px;
+    margin-top: 4px;
+}
+
+
+/* PREGUNTA CINCO */
+.main-question.ask-five .content-with-background {
+	padding-top: 412px;
+}
+.main-question.ask-five .content-with-background label:nth-child(1) {
+	margin-left: 276px;
+}
+.main-question.ask-five .content-with-background label:nth-child(2) {
+	margin-left: 362px;
+    margin-top: 4px;
+}
+
+
+/* PREGUNTA SEIS */
+.main-question.ask-six .content-with-background {
+	padding-top: 412px;
+}
+.main-question.ask-six .content-with-background label:nth-child(1) {
+	margin-left: 276px;
+}
+.main-question.ask-six .content-with-background label:nth-child(2) {
+	margin-left: 362px;
+    margin-top: 4px;
+}
