@@ -37,21 +37,40 @@ class AskThree extends Component {
 
 	render(){
 		return (
-			<div className="main-question">
-				<p className="step">Paso 4</p>
-				<h3>¿Lorem ipsum dolor sit amet, consectetur adipisicing.?</h3>
+			<div className="main-question ask-three">
+				<img src="images/pantalla7.jpg" alt="background step two"/>
+				<div className="content-with-background">
+					<label>
+						<input type="radio" name="ranking" value="1" onClick={ this.handleCheck } />
+				    	<img src="images/aro.png" alt="dot naranja check"/>
+					</label>
+					<label>
+						<input type="radio" name="ranking" value="2" onClick={ this.handleCheck } />
+				    	<img src="images/aro.png" alt="dot naranja check"/>
+					</label>
+					<label>
+						<input type="radio" name="ranking" value="3" onClick={ this.handleCheck } />
+				    	<img src="images/aro.png" alt="dot naranja check"/>
+					</label>
+					<label>
+						<input type="radio" name="ranking" value="4" onClick={ this.handleCheck } />
+				    	<img src="images/aro.png" alt="dot naranja check"/>
+					</label>
+					<label>
+						<input type="radio" name="ranking" value="5" onClick={ this.handleCheck } />
+				    	<img src="images/aro.png" alt="dot naranja check"/>
+					</label>
+				</div>
 
-				<input type="radio" name="ranking" value="1" onClick={ this.handleCheck } /> 1<br />
-				<input type="radio" name="ranking" value="2" onClick={ this.handleCheck } /> 2<br />
-				<input type="radio" name="ranking" value="3" onClick={ this.handleCheck } /> 3<br />
-				<input type="radio" name="ranking" value="4" onClick={ this.handleCheck } /> 4<br />
-				<input type="radio" name="ranking" value="5" onClick={ this.handleCheck } /> 5
-				
 				<div className="box-btn-home">
-					<Link className="btn-own" to="/">Home</Link>
+					<Link className="btn-own" to="/">
+						<img src="images/inicio.png" alt="boton de home"/>
+					</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own" to="/" onClick={ this.handleNextStep }>Next</Link>
+					<Link className="btn-own" to="/ask-four" >
+						<img src="images/siguiente.png"  alt="boton del siguiente paso" />
+					</Link>
 				</div>
 			</div>
 		);

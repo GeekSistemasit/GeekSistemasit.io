@@ -1,0 +1,84 @@
+.main-question {
+	
+}
+
+.main-question .content-with-background {
+	padding-top: 450px;
+}
+.main-question .content-with-background label {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 50px;
+}
+.main-question .content-with-background label span {
+    position: absolute;
+    top: 90px;
+    text-align: center;
+    left: -22px;
+    width: 100px;
+}
+.main-question .content-with-background label > input {
+	visibility: hidden; 
+	position: absolute;
+}
+.main-question .content-with-background label > input + img{
+	opacity: 0;
+}
+.main-question .content-with-background label > input:checked + img{
+	opacity: 1;
+}
+
+
+/* PREGUNTA UNA */
+.main-question.ask-one .content-with-background label:nth-child(1) {
+	margin-left: 188px;
+}
+.main-question.ask-one .content-with-background label:nth-child(2) {
+	margin-left: 230px;
+}
+.main-question.ask-one .content-with-background label:nth-child(3) {
+	margin-left: 266px;
+}
+
+
+/* PREGUNTA DOS */
+.main-question.ask-two .content-with-background {
+	padding-top: 440px;
+}
+.main-question.ask-two .content-with-background label:nth-child(1) {
+	margin-left: 230px;
+}
+.main-question.ask-two .content-with-background label:nth-child(2) {
+	margin-left: 215px;
+}
+.main-question.ask-two .content-with-background label:nth-child(3) {
+	margin-left: 229px;
+}
+
+
+/* PREGUNTA TRES */
+.main-question.ask-three .content-with-background {
+	padding-top: 426px;
+}
+.main-question.ask-three .content-with-background label {
+	width: 100px;
+}
+.main-question.ask-three .content-with-background label:nth-child(1) {
+	margin-left: 110px;
+}
+.main-question.ask-three .content-with-background label:nth-child(2) {
+	margin-left: 73px;
+	margin-top: -1px;
+}
+.main-question.ask-three .content-with-background label:nth-child(3) {
+	margin-left: 81px;
+	margin-top: -1px;
+}
+.main-question.ask-three .content-with-background label:nth-child(4) {
+	margin-left: 79px;
+}
+.main-question.ask-three .content-with-background label:nth-child(5) {
+	margin-left: 71px;
+	margin-top: -2px;
+}

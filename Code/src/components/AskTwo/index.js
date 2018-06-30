@@ -37,19 +37,38 @@ class AskTwo extends Component {
 
 	render(){
 		return (
-			<div className="main-question">
-				<p className="step">Paso 3</p>
-				<h3>¿Lorem ipsum dolor sit amet, consectetur adipisicing.?</h3>
+			<div className="main-question ask-two">
+				<img src="images/pantalla6.jpg" alt="background step two"/>
+				<div className="content-with-background">
+					<label>
+						<input type="radio" name="targets" value="Papelería" onClick={ this.handleCheck } /> 
+				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
+						<br />
+						<span>Papelería</span>
+					</label>
+					<label>
+						<input type="radio" name="targets" value="Hogar" onClick={ this.handleCheck } /> 
+				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
+						<br />
+						<span>Hogar</span>
+					</label>
+					<label>
+						<input type="radio" name="targets" value="Accesorios" onClick={ this.handleCheck } /> 
+				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
+						<br />
+						<span>Accesorios</span>
+					</label>
+				</div>
 
-				<input type="radio" name="targets" value="target1" onClick={ this.handleCheck } /> This is target 1<br />
-				<input type="radio" name="targets" value="target2" onClick={ this.handleCheck } /> This is target 2<br />
-				<input type="radio" name="targets" value="target3" onClick={ this.handleCheck } /> This is target 3
-				
 				<div className="box-btn-home">
-					<Link className="btn-own" to="/">Home</Link>
+					<Link className="btn-own" to="/">
+						<img src="images/inicio.png" alt="boton de home"/>
+					</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own" to="/ask-three" onClick={ this.handleNextStep }>Next</Link>
+					<Link className="btn-own" to="/ask-three" >
+						<img src="images/siguiente.png"  alt="boton del siguiente paso" />
+					</Link>
 				</div>
 			</div>
 		);

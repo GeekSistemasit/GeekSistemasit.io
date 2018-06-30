@@ -26,11 +26,6 @@
 }
 
 .btn-own {
-  color: white;
-  padding: 10px 30px;
-  border-radius: 0px;
-  text-decoration: none;
-  background: #d62f2f;
   opacity: 1;
   transition: 0.5s;
 }
@@ -39,14 +34,24 @@
 }
 .box-btn-home {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  bottom: 0px;
+  left: 10px;
+  width: 100px;
+  z-index: 2;
 }
 
 .box-btn-next {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  bottom: 0px;
+  right: 10px;
+  width: 100px;
+  z-index: 2;
+}
+
+.content-with-background {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 img {

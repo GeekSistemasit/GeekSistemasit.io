@@ -5,17 +5,20 @@ import { Link } from 'react-router-dom';
 // Assets
 import '../Global/css/Wishes.css';
 
+
 // Data 
 import products from '../../data/products.js';
 import poll from '../../data/poll.js';
 
 
+
 class Wishes extends Component {
-	constructor () {
-		super();
+	constructor ( props ) {
+		super( props );
 
 		this.state = {
 			count: 1,
+			arrProducts: [],
 			listProducts: []
 		};
 
@@ -24,24 +27,22 @@ class Wishes extends Component {
 	}
 
 	componentDidMount ( ) {
-		/*fetch( 'https://www.secure-developments.com/commonwealth/ws_onstar/v2/modelo' )
-			.then( results => {
-				results.json()
-			})
-			.then( ( repos ) => {
-				console.log( repos );
-			});*/
 			fetch( 'https://ranking-app-nodejs.herokuapp.com/api/products/' ).
   				then(
   					response => response.json()
 				).then((repos) => {
-					console.log(repos);
-					console.log(repos.length);
+					this.setState ({
+						arrProducts: repos.response
+					});
+
+					console.log( repos.response );
 				});
+
 	}
 
 	handleNextStep( e ) {
 		poll.products = this.state.listProducts;
+		console.log( this.state.arrProducts );
 	}
 
 	handleLikeClick( e ) {
@@ -163,7 +164,7 @@ class Wishes extends Component {
 	render(){
 
 		return (
-			<div className="Wishes">
+			<div className="Wishes" styles="background: url( 'images/pantalla3.jpg' );">
 				<p className="step" onClick={ this.handleNextStep } >Paso 1</p>
 				<h3>Selecciona tus productos deseados</h3>
 				<div className="container-box">
@@ -183,10 +184,16 @@ class Wishes extends Component {
 					<ol></ol>
 				</div>
 				<div className="box-btn-home">
-					<Link className="btn-own" to="/">Home</Link>
+					<Link className="btn-own" to="/">
+						<img src="images/inicio.png" alt="boton de home"/>
+
+					</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own disabled" to="/ask-one" onClick={ this.handleNextStep } >Next</Link>
+					<Link className="btn-own" to="/intermediate-2" >
+						<img src="images/siguiente.png"  alt="boton del siguiente paso" />
+
+					</Link>
 				</div>
 			</div>
 		);
