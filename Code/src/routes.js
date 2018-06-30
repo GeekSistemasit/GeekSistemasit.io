@@ -15,6 +15,7 @@ import AskFour from './components/AskFour';
 import AskFive from './components/AskFive';
 import AskSix from './components/AskSix';
 import AskSeven from './components/AskSeven';
+import End from './components/End';
 
 const AppRoutes = () =>
 	<App>
@@ -30,6 +31,7 @@ const AppRoutes = () =>
 			<Route exact path="/ask-five" component={ AskFive } />
 			<Route exact path="/ask-six" component={ AskSix } />
 			<Route exact path="/ask-seven" component={ AskSeven } />
+			<Route exact path="/end" component={ End } />
 		</Switch>
 	</App>;
 

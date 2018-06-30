@@ -34,8 +34,6 @@ class Wishes extends Component {
 					this.setState ({
 						arrProducts: repos.response
 					});
-
-					console.log( repos.response );
 				});
 
 	}
@@ -76,7 +74,6 @@ class Wishes extends Component {
 					count: this.state.count + 1
 				});
 
-				// Ethis.addProductToList( idProduct, this.state.count );
 				this.renderElementToHtml( name, idProduct );
 
 				if ( this.state.count === 5 ) {
@@ -110,8 +107,6 @@ class Wishes extends Component {
 				})
 			}
 		}
-
-		//this.renderProductList();
 	}
 
 	renderElementToHtml ( name, id ) {
@@ -156,7 +151,6 @@ class Wishes extends Component {
 		this.setState({
 			listProducts: arrayProducts
 		})
-
 	}
 
 
@@ -168,10 +162,10 @@ class Wishes extends Component {
 				<h3>Selecciona tus productos deseados</h3>
 				<div className="container-box">
 					{
-						products && products.map(
+						this.state.arrProducts.map(
 							( item, key ) => 
-								<div data-id={ item.name }  data-name={ item.name } className="box" key={ key }>
-									<img src={ item.img } alt={ item.name } title={ item.name } onClick={ this.handleLikeClick } />
+								<div data-id={ item._id }  data-name={ item.nombre } className="box" key={ key }>
+									<img src={ item.imagen } alt={ item.nombre } title={ item.nombre } onClick={ this.handleLikeClick } />
 									<div className="content-check">
 										<img src="images/done.png" alt="done" />
 									</div>
@@ -189,7 +183,7 @@ class Wishes extends Component {
 					</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own" to="/intermediate-2" >
+					<Link className="btn-own" to="/intermediate-2" onClick={ this.handleNextStep }>
 						<img src="images/siguiente.png"  alt="boton del siguiente paso" />
 
 					</Link>
