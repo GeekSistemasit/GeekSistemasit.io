@@ -14,7 +14,7 @@ class AskFour extends Component {
 		super();
 
 		this.state = {
-			target: ''
+			questionFour: ''
 		}
 
 		this.handleCheck = this.handleCheck.bind( this );
@@ -22,7 +22,7 @@ class AskFour extends Component {
 	}
 
 	handleNextStep() {
-		poll.target = this.state.target;
+		poll.questionFour = this.state.questionFour;
 
 		console.log( poll );
 	}
@@ -31,32 +31,26 @@ class AskFour extends Component {
 		var value = e.target.getAttribute( 'value' );
 
 		this.setState({
-			target: value
+			questionFour: value
 		});
 	}
 
 	render(){
 		return (
 			<div className="main-question ask-four">
-				<img src="images/pantalla6.jpg" alt="background step two"/>
+				<img src="images/pantalla8.jpg" alt="background step two"/>
 				<div className="content-with-background">
 					<label>
-						<input type="radio" name="targets" value="Papelería" onClick={ this.handleCheck } /> 
+						<input type="radio" name="targets" value="Si" onClick={ this.handleCheck } /> 
 				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
 						<br />
-						<span>Papelería</span>
+						<span>Si</span>
 					</label>
 					<label>
-						<input type="radio" name="targets" value="Hogar" onClick={ this.handleCheck } /> 
+						<input type="radio" name="targets" value="No" onClick={ this.handleCheck } /> 
 				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
 						<br />
-						<span>Hogar</span>
-					</label>
-					<label>
-						<input type="radio" name="targets" value="Accesorios" onClick={ this.handleCheck } /> 
-				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
-						<br />
-						<span>Accesorios</span>
+						<span>No</span>
 					</label>
 				</div>
 
