@@ -14,7 +14,7 @@ class AskSeven extends Component {
 		super();
 
 		this.state = {
-			questionSeven: ''
+			descripcion: ''
 		}
 
 		this.handleTypeText = this.handleTypeText.bind( this );
@@ -22,16 +22,27 @@ class AskSeven extends Component {
 	}
 
 	handleNextStep() {
-		poll.questionSeven = this.state.questionSeven;
+		poll.descripcion = this.state.descripcion; 
 
-		console.log( poll );
+		fetch('https://ranking-app-nodejs.herokuapp.com/api/ranking/', {
+		    method: 'post',
+		    headers: {
+			    'Accept': 'application/json',
+			    'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(poll)
+		}).then(function(response) {
+		    return response.json();
+		}).then(function(data) {
+		   console.log("posteo correcto: "+JSON.stringify(poll));
+		});
 	}
 
 	handleTypeText ( e ) {
 		var value = e.target.value;
 
 		this.setState({
-			questionSeven: value
+			descripcion: value
 		});
 		
 		document.querySelector( '.box-btn-next a' ).classList.remove( 'disabled' );
