@@ -1,7 +1,11 @@
 {
-  "main.css": "static/css/main.a5980ab1.css",
-  "main.css.map": "static/css/main.a5980ab1.css.map",
-  "main.js": "static/js/main.8b090623.js",
-  "main.js.map": "static/js/main.8b090623.js.map",
+  "main.css": "static/css/main.a7d22d4f.css",
+  "main.css.map": "static/css/main.a7d22d4f.css.map",
+  "main.js": "static/js/main.aeb48b62.js",
+  "main.js.map": "static/js/main.aeb48b62.js.map",
+  "static/media/NaturaSans-Bold.woff": "static/media/NaturaSans-Bold.4a6bb81f.woff",
+  "static/media/NaturaSans-Regular.otf": "static/media/NaturaSans-Regular.c6951649.otf",
+  "static/media/NaturaScript.otf": "static/media/NaturaScript.4b89812f.otf",
+  "static/media/NaturaScript.woff": "static/media/NaturaScript.5f1480f7.woff",
   "static/media/pantalla3.jpg": "static/media/pantalla3.3129dc8b.jpg"
 }
