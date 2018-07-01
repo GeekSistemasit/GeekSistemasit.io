@@ -6,6 +6,14 @@ import { Link } from 'react-router-dom';
 import '../Global/css/Intermediate.css';
 
 class Intermediate extends Component {
+
+	componentDidMount ( ) {
+		setTimeout(() => {
+         this.props.history.push("/wishes-products")  
+        }, 1500);
+        
+	}
+
 	render(){
 		return (
 			<div className="Intermediate">

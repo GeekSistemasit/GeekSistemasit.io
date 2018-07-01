@@ -6,6 +6,12 @@ import { Link } from 'react-router-dom';
 import '../Global/css/Home.css';
 
 class End extends Component {
+	componentDidMount ( ) {
+		setTimeout(() => {
+         this.props.history.push("/")  
+        }, 1500);
+	}
+
 	render(){
 		return (
 			<Link to="/">
