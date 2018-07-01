@@ -1,30 +1,87 @@
 .Wishes {
+	width: 1024px;
+	height: 768px;
+	overflow: auto;
 }
 
 .Wishes .container-box {
-	display: inline-block;
-	width: 80%;
+    display: inline-block;
+    width: 160px;
+    margin-left: 260px;
+    margin-top: 30px;
 }
 
 .Wishes .container-box .box {
 	position: relative;
     display: inline-block;
-    margin: 14px;
+    outline: none;
+    width: 130px;
+    text-align: center;
+    transition: 0.4s;
 }
-.Wishes .container-box .box.check .content-check{
-	display: block;
-}
-
-.Wishes .container-box .box .content-check {
-    position: absolute;
-    width: 30px;
-    right: -10px;
-    bottom: -10px;
-    display: none;
+.Wishes .container-box .box.check {
+    filter: grayscale(100%);
+    opacity: 0.5;
 }
 
 .Wishes .container-list {
 	display: inline-block;
-	width: 19%;
-	vertical-align: top;
+    width: 300px;
+    vertical-align: top;
+    margin-left: 303px;
+    margin-top: 87px;
+    overflow: hidden;
+}
+.Wishes .container-list li {
+	margin-bottom: 5px;
+}
+.Wishes .container-list li .container-img {
+    display: inline-block;
+    max-width: 100px;
+}
+.Wishes .container-list li .container-text {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    padding: 43px 0 0 20px;
+}
+
+/* SLICK */
+/* item medio */
+.slick-slider .slick-list {
+	max-height: 690px;
+}
+.slick-slider .slick-list .slick-slide {
+	transition: 0.5s;
+    transform: scale(0.6);
+}
+.slick-slide.slick-active.slick-current + div + div{
+    transform: scale( 1 );
+    margin: 8px 0;
+	margin-top: -13px;
+}
+/* 1er item 5to item */
+.slick-slide.slick-active.slick-current, .slick-slide.slick-active.slick-current + div + div + div + div {
+    transform: scale(0.6);
+}
+
+/* 2do item 4to item */
+.slick-slide.slick-active.slick-current + div, .slick-slide.slick-active.slick-current + div + div + div {
+    transform: scale(0.8);
+}
+
+/* 2do item */
+.slick-slide.slick-active.slick-current + div {
+    margin-top: -45px;
+}
+/* 4to item */
+.slick-slide.slick-active.slick-current + div + div + div {
+	margin-top: -20px;
+}
+/* 5to item */
+.slick-slide.slick-active.slick-current + div + div + div  + div {
+	margin-top: -43px;
+}
+.Wishes .container-box .slick-slide .box img {
+	display: inline-block;
 }

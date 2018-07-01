@@ -1,9 +1,11 @@
 // Dependecies
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Slider from "react-slick";
 
 // Assets
 import '../Global/css/Wishes.css';
+import backgroundImage from '../../images/pantalla3.jpg';
 
 
 // Data 
@@ -34,6 +36,8 @@ class Wishes extends Component {
 					this.setState ({
 						arrProducts: repos.response
 					});
+
+					console.log( 'api', repos.response );
 				});
 
 	}
@@ -46,6 +50,7 @@ class Wishes extends Component {
 		var product = e.target.parentElement;
 		var idProduct = product.getAttribute( 'data-id' );
 		var name = product.getAttribute( 'data-name' );
+		var img = product.getAttribute( 'data-img' );
 		
 		var isChecked = product.className;
 
@@ -63,7 +68,7 @@ class Wishes extends Component {
 			document.querySelector( '.box-btn-next a' ).classList.add( 'disabled' );
 
 			this.removeProductToList( idProduct );
-			this.renderElementToHtml( name, idProduct );
+			this.renderElementToHtml( name, img, idProduct );
 		} else {
 			
 			if ( this.state.count  <= 5 ) {	
@@ -74,7 +79,7 @@ class Wishes extends Component {
 					count: this.state.count + 1
 				});
 
-				this.renderElementToHtml( name, idProduct );
+				this.renderElementToHtml( name, img, idProduct );
 
 				if ( this.state.count === 5 ) {
 					document.querySelector( '.box-btn-next a' ).classList.remove( 'disabled' );
@@ -109,15 +114,15 @@ class Wishes extends Component {
 		}
 	}
 
-	renderElementToHtml ( name, id ) {
+	renderElementToHtml ( name, img, id ) {
 		var parentList = document.querySelector( '.container-list ol' );
 		var children = parentList.children;
 		var isChildren; 
-		var element = document.createElement('li');
+		var element = document.createElement( 'li' );
+		var templateList = "";
 
 		for ( let i in children ) {
-
-			if (children[i].innerText !== 'undefined' && children[i].innerText === name ) {
+			if (children[i].innerText !== 'undefined' && children[i].id === id ) {
 				isChildren = children[i];
 			}
 		}
@@ -125,9 +130,16 @@ class Wishes extends Component {
 		if ( isChildren ) {
 			isChildren.remove();
 		} else {
+			templateList += "<div class='container-img'>";
+			templateList += 	"<img src='"+ img +"' />";
+			templateList += "</div>";
+			templateList += "<div class='container-text'>";
+			templateList += 	"<p>"+ name +"</p>";
+			templateList += "</div>";
+
 			element.classList.add("product-wish");
 			element.id = id ;
-			element.innerHTML = name;
+			element.innerHTML = templateList;
 			parentList.append( element );
 
 			var parentListNew = document.querySelectorAll( '.container-list ol li' );
@@ -156,22 +168,33 @@ class Wishes extends Component {
 
 	render(){
 
+	    const settings = {
+			verticalSwiping: true,
+			arrow: true,
+			speed: 500,
+			infinite: false,
+			slidesToShow: 5,
+			swipeToSlide: true,
+			vertical: true
+	    };
+		const  divStyle = {
+			background: 'url(' + backgroundImage + ')'
+		};
+
 		return (
-			<div className="Wishes" styles="background: url( 'images/pantalla3.jpg' );">
-				<p className="step" onClick={ this.handleNextStep } >Paso 1</p>
-				<h3>Selecciona tus productos deseados</h3>
+			<div className="Wishes" style={ divStyle } >
 				<div className="container-box">
-					{
-						this.state.arrProducts.map(
-							( item, key ) => 
-								<div data-id={ item._id }  data-name={ item.nombre } className="box" key={ key }>
-									<img src={ item.imagen } alt={ item.nombre } title={ item.nombre } onClick={ this.handleLikeClick } />
-									<div className="content-check">
-										<img src="images/done.png" alt="done" />
+
+					<Slider {...settings}>
+						{
+							this.state.arrProducts.map(
+								( item, key ) => 
+									<div data-id={ item._id }  data-name={ item.nombre }  data-img={ item.imagen } className="box" key={ key }>
+										<img src={ item.imagen } alt={ item.nombre } title={ item.nombre } onClick={ this.handleLikeClick } />
 									</div>
-								</div>
-						)
-					}
+							)
+						}
+					</Slider>
 				</div>
 				<div className="container-list">
 					<ol></ol>

@@ -1,5 +1,8 @@
 .Content {
   font-family: 'Roboto';
+  position: relative;
+  width: 1024px;
+  height: 768px;
 }
 
 .row {
