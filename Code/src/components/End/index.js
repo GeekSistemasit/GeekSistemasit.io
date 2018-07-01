@@ -8,8 +8,8 @@ import '../Global/css/Home.css';
 class End extends Component {
 	componentDidMount ( ) {
 		setTimeout(() => {
-         this.props.history.push("/")  
-        }, 1500);
+        	this.props.history.push("/")  
+        }, 5000);
 	}
 
 	render(){

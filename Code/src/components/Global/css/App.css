@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'NaturaScript';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../../fonts/NaturaScript.woff');
+  src: local('Natura Script'), local('NaturaScript'),
+       url('../../../fonts/NaturaScript.woff') format('woff'),
+       url('../../../fonts/NaturaScript.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'NaturaSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../../fonts/NaturaSans/NaturaSans-Bold.woff');
+  src: local('Natura Sans'), local('NaturaSans'),
+       url('../../../fonts/NaturaSans/NaturaSans-Bold.woff') format('otf'),
+       url('../../../fonts/NaturaSans/NaturaSans-Regular.otf') format('otf');
+}
+
 .Content {
   font-family: 'Roboto';
   position: relative;

@@ -128,6 +128,7 @@
 	padding: 298px 95px 304px 90px;
 }
 .main-question.ask-seven .content-with-background textarea {
+	font-family: NaturaScript;
     width: 100%;
     background: no-repeat;
     border: 0;
@@ -135,4 +136,5 @@
     height: 283px;
     line-height: 50px;
     outline: none;
+    font-size: 37px;
 }
