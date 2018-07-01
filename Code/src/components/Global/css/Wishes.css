@@ -43,7 +43,11 @@
     display: inline-block;
     vertical-align: top;
     height: 100%;
-    padding: 43px 0 0 20px;
+    padding: 43px 0 0 12px;
+}
+.Wishes .container-list li .container-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
 }
 
 /* SLICK */

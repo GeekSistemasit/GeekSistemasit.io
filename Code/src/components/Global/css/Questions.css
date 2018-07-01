@@ -15,8 +15,10 @@
     position: absolute;
     top: 90px;
     text-align: center;
-    left: -22px;
-    width: 100px;
+	left: -28px;
+    width: 110px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
 }
 .main-question .content-with-background label > input {
 	visibility: hidden; 
