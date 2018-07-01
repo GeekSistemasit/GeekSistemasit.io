@@ -22,7 +22,7 @@ class AskThree extends Component {
 	}
 
 	handleNextStep() {
-		poll.ranking = this.state.ranking;
+		poll.valoracion = this.state.ranking;
 
 		console.log( poll );
 	}

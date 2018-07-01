@@ -22,7 +22,7 @@ class AskFour extends Component {
 	}
 
 	handleNextStep() {
-		poll.questionFour = this.state.questionFour;
+		poll.pregunta1 = this.state.questionFour;
 
 		console.log( poll );
 	}

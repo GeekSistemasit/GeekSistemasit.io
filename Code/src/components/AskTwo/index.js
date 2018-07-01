@@ -14,7 +14,7 @@ class AskTwo extends Component {
 		super();
 
 		this.state = {
-			target: ''
+			category: ''
 		}
 
 		this.handleCheck = this.handleCheck.bind( this );
@@ -22,7 +22,7 @@ class AskTwo extends Component {
 	}
 
 	handleNextStep() {
-		poll.target = this.state.target;
+		poll.category = this.state.category;
 
 		console.log( poll );
 	}
@@ -31,7 +31,7 @@ class AskTwo extends Component {
 		var value = e.target.getAttribute( 'value' );
 
 		this.setState({
-			target: value
+			category: value
 		});
 		
 		document.querySelector( '.box-btn-next a' ).classList.remove( 'disabled' );
@@ -43,19 +43,19 @@ class AskTwo extends Component {
 				<img src="images/pantalla6.jpg" alt="background step two"/>
 				<div className="content-with-background">
 					<label>
-						<input type="radio" name="targets" value="Papelería" onClick={ this.handleCheck } /> 
+						<input type="radio" name="category" value="Papelería" onClick={ this.handleCheck } /> 
 				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
 						<br />
 						<span>Papelería</span>
 					</label>
 					<label>
-						<input type="radio" name="targets" value="Hogar" onClick={ this.handleCheck } /> 
+						<input type="radio" name="category" value="Hogar" onClick={ this.handleCheck } /> 
 				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
 						<br />
 						<span>Hogar</span>
 					</label>
 					<label>
-						<input type="radio" name="targets" value="Accesorios" onClick={ this.handleCheck } /> 
+						<input type="radio" name="category" value="Accesorios" onClick={ this.handleCheck } /> 
 				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
 						<br />
 						<span>Accesorios</span>

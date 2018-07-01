@@ -138,7 +138,7 @@ class Wishes extends Component {
 			templateList += "</div>";
 
 			element.classList.add("product-wish");
-			element.id = id ;
+			element.id = name;
 			element.innerHTML = templateList;
 			parentList.append( element );
 

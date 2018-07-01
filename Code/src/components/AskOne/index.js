@@ -14,7 +14,7 @@ class AskOne extends Component {
 		super();
 
 		this.state = {
-			category: ''
+			target: ''
 		}
 
 		this.handleCheck = this.handleCheck.bind( this );
@@ -22,7 +22,7 @@ class AskOne extends Component {
 	}
 
 	handleNextStep() {
-		poll.category = this.state.category;
+		poll.target = this.state.target;
 
 		console.log( poll );
 	}
@@ -31,7 +31,7 @@ class AskOne extends Component {
 		var value = e.target.getAttribute( 'value' );
 
 		this.setState({
-			category: value
+			target: value
 		});
 		
 		document.querySelector( '.box-btn-next a' ).classList.remove( 'disabled' );
@@ -43,19 +43,19 @@ class AskOne extends Component {
 				<img src="images/pantalla5.jpg" alt="background step two"/>
 				<div className="content-with-background">
 					<label>
-						<input type="radio" name="categories" value="niños" onClick={ this.handleCheck } /> 
+						<input type="radio" name="target" value="niños" onClick={ this.handleCheck } /> 
 				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
 						<br />
 						<span>Niños</span>
 					</label>
 					<label>
-						<input type="radio" name="categories" value="publico en general" onClick={ this.handleCheck } /> 
+						<input type="radio" name="target" value="publico en general" onClick={ this.handleCheck } /> 
 				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
 						<br />
 						<span>Público <br /> en general</span>
 					</label>
 					<label>
-						<input type="radio" name="categories" value="Adolescentes" onClick={ this.handleCheck } /> 
+						<input type="radio" name="target" value="Adolescentes" onClick={ this.handleCheck } /> 
 				    	<img src="images/dot-naranja.png" alt="dot naranja check"/>
 						<br />
 						<span>Adolescentes</span>
@@ -68,7 +68,7 @@ class AskOne extends Component {
 					</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own disabled" to="/ask-two" >
+					<Link className="btn-own disabled" to="/ask-two" onClick={ this.handleNextStep } >
 						<img src="images/siguiente.png"  alt="boton del siguiente paso" />
 					</Link>
 				</div>

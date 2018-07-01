@@ -22,7 +22,7 @@ class AskSix extends Component {
 	}
 
 	handleNextStep() {
-		poll.questionSix = this.state.questionSix;
+		poll.pregunta3 = this.state.questionSix;
 
 		console.log( poll );
 	}
