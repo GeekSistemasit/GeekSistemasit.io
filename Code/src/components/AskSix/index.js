@@ -33,6 +33,8 @@ class AskSix extends Component {
 		this.setState({
 			questionSix: value
 		});
+		
+		document.querySelector( '.box-btn-next a' ).classList.remove( 'disabled' );
 	}
 
 	render(){
@@ -60,7 +62,7 @@ class AskSix extends Component {
 					</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own" to="/ask-seven" onClick={ this.handleNextStep }>
+					<Link className="btn-own disabled" to="/ask-seven" onClick={ this.handleNextStep }>
 						<img src="images/siguiente.png"  alt="boton del siguiente paso" />
 					</Link>
 				</div>

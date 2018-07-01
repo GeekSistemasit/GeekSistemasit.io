@@ -29,16 +29,16 @@ class Wishes extends Component {
 	}
 
 	componentDidMount ( ) {
-			fetch( 'https://ranking-app-nodejs.herokuapp.com/api/products/' ).
-  				then(
-  					response => response.json()
-				).then((repos) => {
-					this.setState ({
-						arrProducts: repos.response
-					});
-
-					console.log( 'api', repos.response );
+		fetch( 'https://ranking-app-nodejs.herokuapp.com/api/products/' ).
+				then(
+					response => response.json()
+			).then((repos) => {
+				this.setState ({
+					arrProducts: repos.response
 				});
+
+				console.log( 'api', repos.response );
+			});
 
 	}
 
@@ -206,9 +206,8 @@ class Wishes extends Component {
 					</Link>
 				</div>
 				<div className="box-btn-next">
-					<Link className="btn-own" to="/intermediate-2" onClick={ this.handleNextStep }>
+					<Link className="btn-own disabled" to="/intermediate-2" onClick={ this.handleNextStep }>
 						<img src="images/siguiente.png"  alt="boton del siguiente paso" />
-
 					</Link>
 				</div>
 			</div>
