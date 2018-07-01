@@ -122,7 +122,7 @@ class Wishes extends Component {
 		var templateList = "";
 
 		for ( let i in children ) {
-			if (children[i].innerText !== 'undefined' && children[i].id === id ) {
+			if (children[i].innerText !== 'undefined' && children[i].id === name ) {
 				isChildren = children[i];
 			}
 		}
